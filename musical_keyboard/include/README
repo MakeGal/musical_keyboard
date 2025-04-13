@@ -1,39 +1,39 @@
+# Arduino Musical Keyboard
 
-This directory is intended for project header files.
+A simple interactive musical keyboard built with an ESP32-C3 microcontroller. Press buttons to play different songs through the DFPlayer Mini MP3 module.
 
-A header file is a file containing C declarations and macro definitions
-to be shared between several project source files. You request the use of a
-header file in your project source file (C, C++, etc) located in `src` folder
-by including it, with the C preprocessing directive `#include'.
+## Features
 
-```src/main.c
+- 7 buttons to trigger different audio tracks
+- Press the same button again to pause playback
+- Simple and intuitive interface
+- Volume control through code
 
-#include "header.h"
+## Hardware Components
 
-int main (void)
-{
- ...
-}
-```
+- ESP32-C3 microcontroller
+- DFRobotDFPlayerMini MP3 player
+- 7 pushbuttons
+- Speaker (connected to DFPlayer Mini)
+- SD card with MP3 files (numbered 001.mp3 to 007.mp3)
 
-Including a header file produces the same results as copying the header file
-into each source file that needs it. Such copying would be time-consuming
-and error-prone. With a header file, the related declarations appear
-in only one place. If they need to be changed, they can be changed in one
-place, and programs that include the header file will automatically use the
-new version when next recompiled. The header file eliminates the labor of
-finding and changing all the copies as well as the risk that a failure to
-find one copy will result in inconsistencies within a program.
+## Setup
 
-In C, the usual convention is to give header files names that end with `.h'.
-It is most portable to use only letters, digits, dashes, and underscores in
-header file names, and at most one dot.
+1. Connect the buttons to the GPIOs specified in the code (5, 6, 7, 9, 10, 20, 21)
+2. Connect the DFPlayer Mini to the ESP32 using Serial1 (RX=1, TX=0)
+3. Prepare an SD card with numbered MP3 files (001.mp3 to 007.mp3)
+4. Insert the SD card into the DFPlayer Mini
+5. Upload the code to the ESP32-C3
 
-Read more about using header files in official GCC documentation:
+## Development
 
-* Include Syntax
-* Include Operation
-* Once-Only Headers
-* Computed Includes
+This project uses PlatformIO for development. To modify or enhance:
 
-https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html
+1. Open the project in PlatformIO
+2. Modify the `src/main.cpp` file
+3. Adjust button pins or functionality as needed
+4. Upload to your ESP32-C3 device
+
+## License
+
+This project is open-source and available for personal and educational use. 
